@@ -6,7 +6,9 @@ alias subl='open -a "Sublime Text"'
 ```
 Open sublime or open a file with sublime text (substitute to whatever).
 Useage:
+
 `subl` -- Opens sublime text
+
 `subl ./yourFilePath` -- open anything from that given directory in sublime
 
 #### Opening specific files with an alias 
@@ -45,8 +47,11 @@ pServe (){
   fi
 }
 ```
+
 Useage:
+
 `pServe` -- default Python server
+
 `pServer 3000` -- A python server on localhost:3000
 
 #### Say command mischief (for Katie)
@@ -60,7 +65,10 @@ say_repeat () {
   done
 }
 ```
-useage: `say_repeat 10 1 'I'm repeating!'` -- Repeat "I'm repeating!" 10 times, spaced 1 second apart
+
+Useage: 
+
+`say_repeat 10 1 'I'm repeating!'` -- Repeat "I'm repeating!" 10 times, spaced 1 second apart
 
 #### Mega file creation for basic sites:
 [This one is huge, so here's a link to the repo.](https://github.com/Phoboes/mks)
@@ -68,5 +76,7 @@ useage: `say_repeat 10 1 'I'm repeating!'` -- Repeat "I'm repeating!" 10 times, 
 Useage:
 
 `mks` -- Populates the current directory with a linked html/css/js
+
 `mks fileName` -- Makes a file named after the given arg (fileName), populates it with the above & opens it in the editor
+
 `mks fileName jq us d3` -- Does the above & additionally curls and links any number of generic JS libraries.
