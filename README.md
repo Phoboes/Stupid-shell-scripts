@@ -70,6 +70,30 @@ Useage:
 
 `say_repeat 10 1 'I'm repeating!'` -- Repeat "I'm repeating!" 10 times, spaced 1 second apart
 
+#### Run scripts  on an empty command entry
+
+If the enter key is struck and the command line is blank, do x
+```sh
+HISTCONTROL=
+detect_blank () {
+  HISTCMD_previous=$(fc -l -1); HISTCMD_previous=${HISTCMD_previous%%$'[\t ]'*}
+  if [[ -z $HISTCMD_before_last ]]; then
+    # Triggered by the initiation of history within the terminal
+    echo "Terminal started."
+  elif [[ $HISTCMD_before_last = "$HISTCMD_previous" ]]; then
+    #  If a key was hit and the history has not advanced -- it was blank.
+    echo "Blank submission"
+  else
+    # Any submission that changes the terminal history (either valid or invalid commands)
+    echo "Not blank"
+  fi
+  HISTCMD_before_last=$HISTCMD_previous
+}
+PROMPT_COMMAND='detect_blank'
+```
+
+
+
 #### Mega file creation for basic sites:
 [This one is huge, so here's a link to the repo.](https://github.com/Phoboes/mks)
 
