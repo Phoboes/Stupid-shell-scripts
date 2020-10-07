@@ -155,7 +155,7 @@ mkMod () {
 }
 ```
 
-##### Bonus:
+##### Bonus (make a lot of modules):
 
 ```
 mkMods (){
